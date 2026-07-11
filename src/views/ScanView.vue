@@ -104,6 +104,29 @@
           {{ errorMsg }}
         </div>
 
+        <!-- Rejection message — gambar ditolak validasi -->
+        <div v-if="rejectionMsg" class="rejection-banner">
+          <div class="rejection-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="9"
+                stroke="currentColor" stroke-width="2"/>
+              <path d="M15 9l-6 6M9 9l6 6"
+                stroke="currentColor" stroke-width="2"
+                stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div>
+            <div class="rejection-title">
+              Gambar Tidak Dapat Dianalisis
+            </div>
+            <div class="rejection-text">{{ rejectionMsg }}</div>
+            <div class="rejection-hint">
+              Pastikan gambar menampilkan lesi kulit Eczema atau
+              Psoriasis dengan jelas sebelum menganalisis.
+            </div>
+          </div>
+        </div>
+
         <!-- Checklist Sebelum Analisis -->
         <div class="info-layout">
         <section class="checklist-card">
@@ -234,7 +257,7 @@ const previewUrl   = ref(null)
 const isDragging   = ref(false)
 const isLoading    = ref(false)
 const errorMsg     = ref('')
-
+const rejectionMsg = ref('')
 const checklist = [
   'Cahaya cukup dan merata',
   'Foto tidak blur / fokus tajam',
@@ -291,6 +314,7 @@ async function analyzeImage() {
   if (!selectedFile.value) return
   isLoading.value = true
   errorMsg.value  = ''
+  rejectionMsg.value = ''
   try {
     const formData = new FormData()
     formData.append('file', selectedFile.value)
@@ -301,9 +325,20 @@ async function analyzeImage() {
     )
     store.setResult(response.data)
     router.push({ name: 'result' })
+
   } catch (err) {
-    errorMsg.value = err.response?.data?.detail
-      || 'Tidak dapat terhubung ke server. Pastikan backend berjalan.'
+    if (err.response?.status === 422) {
+      // Gambar ditolak oleh validasi input
+      const detail = err.response.data?.detail
+      if (detail?.type === 'input_validation_failed') {
+        rejectionMsg.value = detail.message
+      } else {
+        errorMsg.value = 'Gambar tidak dapat diproses.'
+      }
+    } else {
+      errorMsg.value = err.response?.data?.detail
+        || 'Tidak dapat terhubung ke server.'
+    }
   } finally {
     isLoading.value = false
   }
@@ -549,6 +584,40 @@ async function analyzeImage() {
   padding: var(--space-md);
   border-radius: var(--radius-default);
   font-size: 14px;
+}
+
+.rejection-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  background-color: var(--color-error-container);
+  border: 1px solid var(--color-error);
+  border-radius: var(--radius-default);
+  padding: var(--space-md);
+  color: var(--color-on-error-container);
+}
+
+.rejection-icon {
+  flex-shrink: 0;
+  color: var(--color-error);
+}
+
+.rejection-title {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.rejection-text {
+  font-size: 13px;
+  line-height: 1.6;
+  margin-bottom: var(--space-xs);
+}
+
+.rejection-hint {
+  font-size: 12px;
+  opacity: 0.8;
+  font-style: italic;
 }
 
 /* Checklist */

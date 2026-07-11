@@ -465,17 +465,17 @@ const chartData = computed(() => {
 .bar-chart {
   display: flex;
   align-items: flex-end;
-  justify-content: space-around;
   gap: var(--space-sm);
-  height: 140px;
+  height: 120px;
   padding-top: var(--space-sm);
 }
 
 .bar-count {
   font-size: 12px;
   font-weight: 600;
-  color: var(--color-on-surface-variant);
-  min-height: 16px;
+  color: var(--color-primary);
+  min-height: 18px;
+  line-height: 1;
 }
 
 .bar-item {
@@ -484,30 +484,26 @@ const chartData = computed(() => {
   align-items: center;
   gap: 4px;
   flex: 1;
-  height: 100%;
-  justify-content: flex-end;
 }
 
 .bar-track {
   width: 100%;
-  height: 90px;
+  height: 80px;
   background-color: var(--color-surface-container);
   border-radius: var(--radius-sm);
-  display: flex;
-  align-items: flex-end;
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
 }
 
 .bar-fill {
-  width: 100%;
-  background-color: var(--color-surface-container-high);
-  border-radius: var(--radius-sm);
-  transition: height 0.4s ease;
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
+  background-color: var(--color-surface-container-high);
+  border-radius: var(--radius-sm);
+  min-height: 2px;
+  transition: height 0.5s ease;
 }
 
 .bar-fill--active {
@@ -515,7 +511,7 @@ const chartData = computed(() => {
 }
 
 .bar-label {
-  font-size: 11px;
+  font-size: 10px;
   color: var(--color-on-surface-variant);
   text-align: center;
   white-space: nowrap;

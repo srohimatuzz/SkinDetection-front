@@ -12,6 +12,13 @@ export const useSkinStore = defineStore('skin', {
       name  : '',
       email : '',
       photo : null,
+      persist: {
+        key    : 'dermassist-store',
+        storage: localStorage,
+        paths  : ['analysisHistory', 'user'],
+        // Jangan persist analysisResult karena data base64
+        // terlalu besar untuk localStorage
+      }
     }
   }),
 
@@ -50,6 +57,7 @@ export const useSkinStore = defineStore('skin', {
   },
 
   actions: {
+    
 
     // ── Auth ─────────────────────────────────────
     setUser(userData) {
@@ -145,6 +153,16 @@ export const useSkinStore = defineStore('skin', {
 
     clearResult() {
       this.analysisResult = null
+    },
+
+    deleteHistory(itemId) {
+      this.analysisHistory = this.analysisHistory.filter(
+        item => item.id !== itemId
+      )
+      // Jika result yang sedang ditampilkan adalah item yang dihapus
+      if (this.analysisResult?._historyId === itemId) {
+        this.analysisResult = null
+      }
     },
   }
 })
