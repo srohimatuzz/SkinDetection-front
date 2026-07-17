@@ -76,8 +76,8 @@
               <!-- Gambar + badge -->
               <div class="classification-image-wrap">
                 <img
-                  v-if="result.images?.original"
-                  :src="`data:image/png;base64,${result.images.original}`"
+                  v-if="imageOriginal"
+                  :src="imageOriginal"
                   alt="Gambar lesi kulit"
                   class="classification-img"
                 />
@@ -169,8 +169,8 @@
             <div class="gradcam-panels">
               <div class="gradcam-panel">
                 <img
-                  v-if="result.images?.original"
-                  :src="`data:image/png;base64,${result.images.original}`"
+                  v-if="imageOriginal"
+                  :src="imageOriginal"
                   alt="Gambar Original"
                   class="gradcam-img"
                 />
@@ -181,8 +181,8 @@
 
               <div class="gradcam-panel">
                 <img
-                  v-if="result.images?.heatmap"
-                  :src="`data:image/png;base64,${result.images.heatmap}`"
+                  v-if="imageHeatmap"
+                  :src="imageHeatmap"
                   alt="Grad-CAM Heatmap"
                   class="gradcam-img"
                 />
@@ -193,8 +193,8 @@
 
               <div class="gradcam-panel">
                 <img
-                  v-if="result.images?.overlay"
-                  :src="`data:image/png;base64,${result.images.overlay}`"
+                  v-if="imageOverlay"
+                  :src="imageOverlay"
                   alt="Overlay Grad-CAM"
                   class="gradcam-img"
                 />
@@ -434,6 +434,30 @@ const isOodDetected = computed(() => {
 const hasAmbiguitas = computed(() => {
   const amb = result.value?.reasoning?.ambiguitas
   return amb && amb.trim() !== ''
+})
+
+// Tambahkan computed ini di script setup ResultView.vue
+const imageOriginal = computed(() => {
+  const img = result.value?.images?.original
+  if (!img) return null
+  // Jika sudah berupa URL (dari Storage)
+  if (img.startsWith('http')) return img
+  // Jika base64
+  return `data:image/png;base64,${img}`
+})
+
+const imageHeatmap = computed(() => {
+  const img = result.value?.images?.heatmap
+  if (!img) return null
+  if (img.startsWith('http')) return img
+  return `data:image/png;base64,${img}`
+})
+
+const imageOverlay = computed(() => {
+  const img = result.value?.images?.overlay
+  if (!img) return null
+  if (img.startsWith('http')) return img
+  return `data:image/png;base64,${img}`
 })
 </script>
 

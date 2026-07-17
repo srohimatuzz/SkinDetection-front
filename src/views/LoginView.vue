@@ -95,33 +95,6 @@
         {{ isLoading ? 'Menghubungkan...' : 'Login dengan Google' }}
       </button>
 
-      <div class="divider">
-        <span>ATAU MASUK DENGAN EMAIL</span>
-      </div>
-
-      <div class="form-group">
-        <label class="form-label">Alamat Email</label>
-        <input
-          v-model="email"
-          type="email"
-          class="form-input"
-          placeholder="nama@email.com"
-          @keyup.enter="loginWithEmail"
-        />
-      </div>
-
-      <button
-        class="btn-login"
-        @click="loginWithEmail"
-        :disabled="!email"
-      >
-        Login
-      </button>
-
-      <p v-if="errorMsg" class="error-msg">
-        {{ errorMsg }}
-      </p>
-
     </div>
 
     <p class="login-disclaimer">
@@ -140,7 +113,6 @@ import { useSkinStore }  from '@/stores/counter'
 
 const router   = useRouter()
 const store    = useSkinStore()
-const email    = ref('')
 const errorMsg = ref('')
 const isLoading = ref(false)
 
@@ -160,44 +132,7 @@ async function loginWithGoogle() {
     })
     if (error) errorMsg.value = error.message
   } catch (err) {
-    errorMsg.value = 'Gagal login dengan Google.'
-  } finally {
-    isLoading.value = false
-  }
-}
-
-async function loginWithEmail() {
-  errorMsg.value = ''
-
-  if (!email.value) {
-    errorMsg.value = 'Masukkan alamat email terlebih dahulu.'
-    return
-  }
-  if (!email.value.includes('@')) {
-    errorMsg.value = 'Format email tidak valid.'
-    return
-  }
-
-  isLoading.value = true
-  try {
-    const { error } = await supabase.auth.signInWithOtp({
-      email  : email.value,
-      options: {
-        emailRedirectTo: `${window.location.origin}/dashboard`
-      }
-    })
-
-    if (error) {
-      errorMsg.value = error.message
-    } else {
-      errorMsg.value = ''
-      alert(
-        `Link login telah dikirim ke ${email.value}. ` +
-        `Cek inbox email Anda.`
-      )
-    }
-  } catch (err) {
-    errorMsg.value = 'Gagal mengirim link login.'
+    errorMsg.value = 'Gagal login dengan Google. Silahkan Coba Lagi!'
   } finally {
     isLoading.value = false
   }
@@ -375,9 +310,9 @@ left: -120px;
   gap: var(--space-sm);
   width: 100%;
   padding: 12px var(--space-md);
-  background-color: #ffffff;
+  background: #ffffff;
   color: var(--color-on-surface);
-  border: 1px solid #d9e2ef;
+  border: 1px solid #8ebbfa;
   border-radius: 12px;
   font-size: 17px;
   font-weight: 500;
@@ -388,7 +323,7 @@ left: -120px;
 }
 
 .btn-google:hover {
-  background-color: #f8f9fa;
+  background-color: #d7ebff;
   box-shadow: 0 1px 4px rgba(0,0,0,0.1);
 }
 

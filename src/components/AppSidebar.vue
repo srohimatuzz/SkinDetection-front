@@ -72,7 +72,7 @@ const navItems = [
   {
     name : 'guide',
     path : '/guide',
-    label: 'Panduan',
+    label: 'Panduan Aplikasi',
     icon : `<svg width="18" height="18" viewBox="0 0 24 24" fill="none">
       <path d="M4 19.5A2.5 2.5 0 016.5 17H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
       <path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z" stroke="currentColor" stroke-width="2"/>
@@ -81,7 +81,7 @@ const navItems = [
   {
     name : 'about',
     path : '/about',
-    label: 'Tentang',
+    label: 'Tentang Aplikasi',
     icon : `<svg width="18" height="18" viewBox="0 0 24 24" fill="none">
       <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
       <path d="M12 11v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>

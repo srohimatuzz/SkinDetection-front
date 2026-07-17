@@ -248,14 +248,14 @@ const psoriasisCount = computed(() =>
 )
 
 function viewDetail(item) {
-  if (
-    store.analysisResult &&
-    store.analysisResult._historyId === item.id
-  ) {
+  // Coba load full_result dari item history
+  const success = store.setResultFromHistory(item)
+
+  if (success) {
     router.push({ name: 'result' })
-    return
+  } else {
+    showDetailModal.value = true
   }
-  showDetailModal.value = true
 }
 
 function askDelete(item) {
