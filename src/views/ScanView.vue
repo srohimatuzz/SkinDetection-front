@@ -318,11 +318,16 @@ async function analyzeImage() {
   try {
     const formData = new FormData()
     formData.append('file', selectedFile.value)
+
+    const API_BASE_URL =
+      import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000'
+
     const response = await axios.post(
-      'http://127.0.0.1:8000/analyze',
+      `${API_BASE_URL}/analyze`,
       formData,
       { headers: { 'Content-Type': 'multipart/form-data' } }
     )
+
     store.setResult(response.data)
     router.push({ name: 'result' })
 
