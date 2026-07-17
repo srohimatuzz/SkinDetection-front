@@ -321,7 +321,7 @@ async function analyzeImage() {
 
     const API_URL =
       import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000'
-      
+
       console.log("API_URL =", API_URL)
 
     const response = await axios.post(
@@ -334,6 +334,10 @@ async function analyzeImage() {
     router.push({ name: 'result' })
 
   } catch (err) {
+  console.log(err)
+  console.log(err.response)
+  console.log(err.response?.data)
+
     if (err.response?.status === 422) {
       // Gambar ditolak oleh validasi input
       const detail = err.response.data?.detail
@@ -343,8 +347,11 @@ async function analyzeImage() {
         errorMsg.value = 'Gambar tidak dapat diproses.'
       }
     } else {
-      errorMsg.value = err.response?.data?.detail
-        || 'Tidak dapat terhubung ke server.'
+
+      errorMsg.value =
+          err.response?.data?.detail ||
+          err.message ||
+          'Tidak dapat terhubung ke server.'
     }
   } finally {
     isLoading.value = false
