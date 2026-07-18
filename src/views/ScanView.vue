@@ -347,26 +347,51 @@ async function analyzeImage() {
     store.setResult(response.data)
     router.push({ name: 'result' })
 
+  // } catch (err) {
+  // console.log(err)
+  // console.log(err.response)
+  // console.log(err.response?.data)
+
+  //   if (err.response?.status === 422) {
+  //     // Gambar ditolak oleh validasi input
+  //     const detail = err.response.data?.detail
+  //     if (detail?.type === 'input_validation_failed') {
+  //       rejectionMsg.value = detail.message
+  //     } else {
+  //       errorMsg.value = 'Gambar tidak dapat diproses.'
+  //     }
+  //   } else {
+
+  //     errorMsg.value =
+  //         err.response?.data?.detail ||
+  //         err.message ||
+  //         'Tidak dapat terhubung ke server.'
+  //   }
   } catch (err) {
-  console.log(err)
-  console.log(err.response)
-  console.log(err.response?.data)
 
-    if (err.response?.status === 422) {
-      // Gambar ditolak oleh validasi input
-      const detail = err.response.data?.detail
-      if (detail?.type === 'input_validation_failed') {
-        rejectionMsg.value = detail.message
-      } else {
-        errorMsg.value = 'Gambar tidak dapat diproses.'
-      }
+  console.error("=== ERROR ===")
+  console.error(err)
+  console.error(err.response)
+  console.error(err.response?.data)
+  console.error(err.stack)
+
+  if (err.response?.status === 422) {
+
+    const detail = err.response.data?.detail
+
+    if (detail?.type === 'input_validation_failed') {
+      rejectionMsg.value = detail.message
     } else {
-
-      errorMsg.value =
-          err.response?.data?.detail ||
-          err.message ||
-          'Tidak dapat terhubung ke server.'
+      errorMsg.value = 'Gambar tidak dapat diproses.'
     }
+
+  } else {
+
+    errorMsg.value =
+      err.response?.data?.detail ||
+      err.message ||
+      'Tidak dapat terhubung ke server.'
+  }
   } finally {
     isLoading.value = false
   }
