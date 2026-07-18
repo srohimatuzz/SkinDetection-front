@@ -324,11 +324,25 @@ async function analyzeImage() {
 
       console.log("API_URL =", API_URL)
 
+    // const response = await axios.post(
+    //   `${API_URL}/analyze`,
+    //   formData,
+    //   { headers: { 'Content-Type': 'multipart/form-data' } }
+    // )
+
     const response = await axios.post(
       `${API_URL}/analyze`,
       formData,
-      { headers: { 'Content-Type': 'multipart/form-data' } }
+      {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      }
     )
+
+    console.log("=== RESPONSE ===")
+    console.log(response)
+    console.log(response.data)
 
     store.setResult(response.data)
     router.push({ name: 'result' })
