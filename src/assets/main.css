@@ -166,3 +166,183 @@ body {
   background-color: var(--color-error-container);
   color: var(--color-on-error-container);
 }
+
+/* ── Responsive Utilities ── */
+
+/* Sembunyikan di mobile */
+@media (max-width: 768px) {
+  .hide-mobile { display: none !important; }
+}
+
+/* Sembunyikan di desktop */
+@media (min-width: 769px) {
+  .hide-desktop { display: none !important; }
+}
+
+/* Grid responsive */
+@media (max-width: 768px) {
+  /* Dashboard columns: hapus kolom sidebar kanan */
+  .dashboard-columns {
+    grid-template-columns: 1fr !important;
+  }
+
+  .dashboard-sidebar {
+    position: static !important;
+  }
+
+  /* Summary cards: 1 kolom di mobile */
+  .summary-cards {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Summary grid dashboard lama */
+  .summary-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Education grid: 1 kolom */
+  .education-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Fact grid: 1 kolom */
+  .fact-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Scan layout: 1 kolom */
+  .scan-layout {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Result layout: 1 kolom */
+  .result-layout {
+    grid-template-columns: 1fr !important;
+  }
+
+  .result-sidebar {
+    position: static !important;
+  }
+
+  /* Gradcam panels: scroll horizontal */
+  .gradcam-panels {
+    grid-template-columns: repeat(3, minmax(200px, 1fr)) !important;
+    overflow-x: auto;
+    padding-bottom: var(--space-sm);
+  }
+
+  /* Heatmap stats: 2 kolom */
+  .heatmap-stats {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  /* Classification: 1 kolom */
+  .classification-top {
+    grid-template-columns: 1fr !important;
+  }
+
+  .classification-image-wrap {
+    max-width: 200px;
+    margin: 0 auto;
+  }
+
+  /* History summary: wrap */
+  .history-summary {
+    gap: var(--space-lg) !important;
+    flex-wrap: wrap;
+  }
+
+  /* About: 1 kolom */
+  .about-hero {
+    grid-template-columns: 1fr !important;
+  }
+
+  .goal-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .steps-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .metrics-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .components-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Prep grid panduan: 2 kolom */
+  .prep-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  /* Result guide: 1 kolom */
+  .result-guide-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Hero: stack vertikal */
+  .dashboard-hero {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .btn-hero {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Edu card body: stack */
+  .edu-card-body {
+    flex-direction: column !important;
+  }
+
+  .edu-card-img-wrap {
+    display: none;
+  }
+
+  /* Topbar di page-content mobile */
+  .topbar {
+    position: sticky;
+    top: 56px;
+  }
+
+  /* Font size adjustment */
+  .text-headline-lg {
+    font-size: 24px !important;
+    line-height: 32px !important;
+  }
+
+  .text-headline-md {
+    font-size: 20px !important;
+  }
+}
+
+/* Tablet */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .dashboard-columns {
+    grid-template-columns: 1fr 240px !important;
+  }
+
+  .summary-cards {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .education-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .scan-layout {
+    grid-template-columns: 1fr 280px !important;
+  }
+
+  .result-layout {
+    grid-template-columns: 1fr 260px !important;
+  }
+}

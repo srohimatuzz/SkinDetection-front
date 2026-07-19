@@ -317,16 +317,16 @@
 
         <!-- Footer -->
         <footer class="dashboard-footer">
-          <p class="footer-brand">DermAssist Health</p>
+          <p class="footer-brand">DermAssist</p>
           <div class="footer-links">
             <a href="#">Kebijakan Privasi</a>
             <a href="#">Syarat &amp; Ketentuan</a>
-            <a href="#">Sanggahan Medis</a>
+            <RouterLink to="/about">Sanggahan Medis</RouterLink>
             <a href="#">Hubungi Spesialis</a>
           </div>
           <p class="footer-copy">
-            © 2024 DermAssist Health.
-            Hanya untuk tujuan informasi klinis.
+            © 2026 DermAssist.
+            Hanya untuk tujuan informasi klinis. Bukan pengganti saran medis profesional.
           </p>
         </footer>
 

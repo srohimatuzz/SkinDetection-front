@@ -10,7 +10,7 @@
           Explainable Artificial Intelligence (XAI).
         </p>
         <RouterLink to="/scan" class="btn-scan">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="blue">
             <circle cx="11" cy="11" r="8"
               stroke="white" stroke-width="2"/>
             <path d="M21 21l-3-3"
@@ -25,10 +25,6 @@
     <div class="section-card">
       <h2 class="section-title">
         <svg class="section-icon" viewBox="0 0 24 24" fill="none">
-        <path d="M9 18h6M10 22h4M12 2a7 7 0 00-4 12c.6.6 1 1.3 1.2 2H15c.2-.7.6-1.4 1.2-2A7 7 0 0012 2z"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"/>
         </svg>
         Mengapa DermAssist Dibuat?
       </h2>
@@ -42,10 +38,6 @@
         <div class="reason-item">
           <div class="reason-icon">
             <svg viewBox="0 0 24 24" fill="none">
-            <path
-            d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"
-            stroke="currentColor"
-            stroke-width="2"/>
             <circle
             cx="12"
             cy="12"
@@ -61,10 +53,6 @@
         <div class="reason-item">
           <div class="reason-icon">
             <svg viewBox="0 0 24 24" fill="none">
-            <path
-            d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"
-            stroke="currentColor"
-            stroke-width="2"/>
             <circle
             cx="12"
             cy="12"
@@ -80,10 +68,6 @@
         <div class="reason-item">
           <div class="reason-icon">
             <svg viewBox="0 0 24 24" fill="none">
-            <path
-            d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"
-            stroke="currentColor"
-            stroke-width="2"/>
             <circle
             cx="12"
             cy="12"
@@ -99,10 +83,6 @@
         <div class="reason-item">
           <div class="reason-icon">
             <svg viewBox="0 0 24 24" fill="none">
-            <path
-            d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"
-            stroke="currentColor"
-            stroke-width="2"/>
             <circle
             cx="12"
             cy="12"
@@ -299,14 +279,15 @@
 
     <!-- Footer -->
     <footer class="about-footer">
-      <p class="footer-brand">DermAssist Health</p>
+      <p class="footer-brand">DermAssist</p>
       <div class="footer-links">
-        <a href="#">Kebijakan Privasi</a>
-        <a href="#">Ketentuan Layanan</a>
-        <a href="#">Sanggahan Medis</a>
+            <a href="#">Kebijakan Privasi</a>
+            <a href="#">Syarat &amp; Ketentuan</a>
+            <RouterLink to="/about">Sanggahan Medis</RouterLink>
+            <a href="#">Hubungi Spesialis</a>
       </div>
       <p class="footer-copy">
-        © 2024 DermAssist Health. Untuk tujuan informasi klinis saja.
+        © 2026 DermAssist. Untuk tujuan informasi klinis saja.
         Bukan pengganti saran medis profesional.
       </p>
     </footer>

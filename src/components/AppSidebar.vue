@@ -1,11 +1,19 @@
 <template>
-  <aside class="sidebar">
+  <aside class="sidebar" :class="{ 'sidebar--open': isOpen }">
 
     <div class="sidebar-brand">
       <div>
         <div class="brand-name">DermAssist</div>
-        <div class="brand-subtitle">Alat Diagnosis Klinis</div>
+        <div class="brand-subtitle">Alat Diagnosis Klinis Awal</div>
       </div>
+      <!-- Tombol tutup di mobile -->
+      <button class="sidebar-close" @click="$emit('close')">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <path d="M18 6L6 18M6 6l12 12"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round"/>
+        </svg>
+      </button>
     </div>
 
     <nav class="sidebar-nav">
@@ -15,6 +23,7 @@
         :to="item.path"
         class="nav-item"
         :class="{ active: currentRoute === item.name }"
+        @click="$emit('close')"
       >
         <span class="nav-icon" v-html="item.icon"></span>
         <span class="nav-label">{{ item.label }}</span>
@@ -22,8 +31,8 @@
     </nav>
 
     <div class="sidebar-footer">
-      <RouterLink to="/scan" class="btn-scan-new">
-        + Start New Scan
+      <RouterLink to="/scan" class="btn-scan-new" @click="$emit('close')">
+        Start New Scan
       </RouterLink>
     </div>
 
@@ -34,9 +43,14 @@
 import { computed } from 'vue'
 import { useRoute, RouterLink } from 'vue-router'
 
+defineProps({ isOpen: Boolean })
+defineEmits(['close'])
+
 const route        = useRoute()
-const routeGroupMap = {result: 'scan',}
-const currentRoute = computed(() => routeGroupMap[route.name] || route.name)
+const routeGroupMap = { result: 'scan' }
+const currentRoute = computed(() =>
+  routeGroupMap[route.name] || route.name
+)
 
 const navItems = [
   {
@@ -103,29 +117,38 @@ const navItems = [
   display: flex;
   flex-direction: column;
   padding: var(--space-lg) var(--space-md);
-  z-index: 100;
+  z-index: 160;
+  transition: transform 0.3s ease;
 }
 
 .sidebar-brand {
   display: flex;
   align-items: center;
-  gap: var(--space-sm);
+  justify-content: space-between;
   margin-bottom: var(--space-xl);
   padding-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--color-outline-variant);
 }
 
-.brand-icon   { font-size: 24px; }
-
 .brand-name {
-  font-size: 28px;
+  font-size: 20px;
   font-weight: 700;
   color: var(--color-primary);
-  line-height: 1.2;
 }
 
 .brand-subtitle {
-  font-size: 13px;
+  font-size: 11px;
   color: var(--color-on-surface-variant);
+  margin-top: 2px;
+}
+
+.sidebar-close {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-on-surface-variant);
+  padding: 4px;
 }
 
 .sidebar-nav {
@@ -159,9 +182,10 @@ const navItems = [
 }
 
 .nav-icon {
-  font-size: 18px;
+  display: flex;
+  align-items: center;
   width: 20px;
-  text-align: center;
+  flex-shrink: 0;
 }
 
 .sidebar-footer {
@@ -184,4 +208,23 @@ const navItems = [
 }
 
 .btn-scan-new:hover { opacity: 0.9; }
+
+/* Mobile: sidebar jadi drawer */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+    width: 280px;
+    box-shadow: var(--shadow-level-2);
+  }
+
+  .sidebar--open {
+    transform: translateX(0);
+  }
+
+  .sidebar-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
 </style>

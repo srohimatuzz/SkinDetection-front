@@ -32,12 +32,11 @@
 
       <!-- Disclaimer banner -->
       <div class="disclaimer-banner">
-        <span class="disclaimer-icon">⚕️</span>
         <div class="disclaimer-text">
-          <strong>Sanggahan Medis</strong> — Analisis ini
+          <b>Sanggahan Medis</b> — Analisis ini
           dihasilkan oleh AI untuk tujuan informasi. Ini
-          <strong>BUKAN</strong> diagnosis medis profesional.
-          Sistem <strong>hanya mengenali Eczema dan Psoriasis</strong>
+          <b>BUKAN</b> diagnosis medis profesional.
+          Sistem <b>hanya mengenali Eczema dan Psoriasis</b>
           dan tidak dapat memastikan apakah gambar benar-benar
           termasuk salah satu dari kedua kondisi tersebut.
           Silakan berkonsultasi dengan dokter spesialis kulit
@@ -82,7 +81,7 @@
                   class="classification-img"
                 />
                 <div class="condition-badge">
-                  🔍 Terdeteksi:
+                  Terdeteksi:
                   {{ result.classification.nama_penyakit }}
                 </div>
               </div>
@@ -92,7 +91,7 @@
                 <div class="confidence-value">
                   {{ confidencePct }}%
                   <span class="confidence-label">
-                    Tingkat Kepercayaan
+                    <b>Tingkat Kepercayaan</b>
                   </span>
                 </div>
 
@@ -148,7 +147,7 @@
           <div class="gradcam-card">
             <div class="gradcam-header">
               <h2 class="gradcam-title">
-                👁 Visualisasi Grad-CAM
+                Visualisasi Grad-CAM
               </h2>
               <div class="gradcam-legend">
                 <span class="legend-item">
@@ -207,7 +206,7 @@
             <!-- Statistik heatmap -->
             <div class="heatmap-stats">
               <div class="heatmap-stat">
-                <div class="heatmap-stat-label">Kualitas</div>
+                <div class="heatmap-stat-label">Kategori Area</div>
                 <div class="heatmap-stat-value">
                   {{ result.heatmap_analysis.quality.toUpperCase() }}
                 </div>
@@ -225,7 +224,7 @@
                 </div>
               </div>
               <div class="heatmap-stat">
-                <div class="heatmap-stat-label">Peak Area</div>
+                <div class="heatmap-stat-label">Titik Area</div>
                 <div class="heatmap-stat-value">
                   {{ result.heatmap_analysis.peak_location }}
                 </div>
@@ -236,12 +235,12 @@
           <!-- Card Penjelasan Sistem -->
           <div class="explanation-card">
             <h2 class="explanation-title">
-              📋 Penjelasan Sistem
+              Penjelasan Sistem AI
             </h2>
 
             <div class="explanation-section">
               <div class="explanation-section-label">
-                Penjelasan Model
+                Penjelasan Hasil Analisis
               </div>
               <p class="explanation-text">
                 {{ result.reasoning.penjelasan_model }}
@@ -254,7 +253,7 @@
                 class="accordion-btn"
                 @click="showClinical = !showClinical"
               >
-                <span>ℹ️ Informasi Klinis Lengkap</span>
+                <span><b>Informasi Klinis Lengkap</b></span>
                 <span>{{ showClinical ? '▲' : '▼' }}</span>
               </button>
               <div v-if="showClinical" class="accordion-body">
@@ -265,11 +264,11 @@
                   <p>{{ result.reasoning.fitur_klinis }}</p>
                 </div>
                 <div class="clinical-section">
-                  <strong>Lokasi Predileksi</strong>
+                  <b>Lokasi Predileksi</b>
                   <p>{{ result.reasoning.lokasi_predileksi }}</p>
                 </div>
                 <div class="clinical-section">
-                  <strong>Interpretasi Heatmap</strong>
+                  <b>Interpretasi Heatmap</b>
                   <p>{{ result.reasoning.heatmap_interpret }}</p>
                 </div>
               </div>
@@ -285,8 +284,7 @@
 
             <!-- Rekomendasi -->
             <div class="rekomendasi-banner">
-              ✅
-              <strong>Rekomendasi:</strong>
+              <b>Rekomendasi:</b>
               {{ result.reasoning.rekomendasi }}
             </div>
 
@@ -353,14 +351,14 @@
             to="/scan"
             class="btn-primary btn-new-scan"
           >
-            🔬 Mulai Pindaian Baru
+            Mulai Pindaian Baru
           </RouterLink>
 
           <RouterLink
             to="/history"
             class="btn-history"
           >
-            📋 Lihat Riwayat
+            Lihat Riwayat
           </RouterLink>
 
         </div>
@@ -369,14 +367,16 @@
 
       <!-- Footer -->
       <footer class="result-footer">
+        <p class="footer-brand">DermAssist</p>
         <div class="footer-links">
-          <a href="#">Kebijakan Privasi</a>
-          <a href="#">Ketentuan Layanan</a>
-          <RouterLink to="/about">Sanggahan Medis</RouterLink>
+            <a href="#">Kebijakan Privasi</a>
+            <a href="#">Syarat &amp; Ketentuan</a>
+            <RouterLink to="/about">Sanggahan Medis</RouterLink>
+            <a href="#">Hubungi Spesialis</a>
         </div>
         <p class="footer-copy">
-          © 2024 DermAssist Health. Hanya untuk tujuan
-          informasi klinis.
+          © 2026 DermAssist. Hanya untuk tujuan
+          informasi klinis. Bukan pengganti saran medis profesional.
         </p>
       </footer>
 
@@ -842,7 +842,7 @@ const imageOverlay = computed(() => {
   border: none;
   border-radius: var(--radius-default);
   padding: var(--space-sm) var(--space-md);
-  font-size: 14px;
+  font-size: 16px bold;
   font-weight: 500;
   color: var(--color-primary);
   cursor: pointer;
@@ -881,7 +881,7 @@ const imageOverlay = computed(() => {
   color: #664d03;
   border-radius: var(--radius-default);
   padding: var(--space-md);
-  font-size: 14px;
+  font-size: 16px bold;
   line-height: 1.6;
 }
 
@@ -891,7 +891,7 @@ const imageOverlay = computed(() => {
   color: #155724;
   border-radius: var(--radius-default);
   padding: var(--space-md);
-  font-size: 14px;
+  font-size: 16px bold;
   line-height: 1.6;
 }
 
