@@ -692,4 +692,10 @@ stroke-linecap="round"/>
   font-size: 11px;
   color: var(--color-outline);
 }
+
+@media (max-width: 768px) {
+  .reason-grid { grid-template-columns: 1fr; }
+  .goal-grid { grid-template-columns: repeat(2, 1fr); }
+  .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+}
 </style>

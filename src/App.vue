@@ -104,6 +104,10 @@ import { onMounted } from 'vue'
 <style>
 * { box-sizing: border-box; }
 
+html, body, #app-wrapper {
+  overflow-x: hidden;
+}
+
 #app-wrapper {
   width: 100%;
   min-height: 100vh;

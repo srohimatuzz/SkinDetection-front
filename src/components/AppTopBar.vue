@@ -284,4 +284,10 @@ onUnmounted(() => {
 .dropdown-logout:hover {
   background-color: var(--color-error-container);
 }
+
+@media (max-width: 768px) {
+  .topbar {
+    display: none;
+  }
+}
 </style>

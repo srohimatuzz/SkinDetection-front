@@ -315,21 +315,6 @@
           </div>
         </div>
 
-        <!-- Footer -->
-        <footer class="dashboard-footer">
-          <p class="footer-brand">DermAssist</p>
-          <div class="footer-links">
-            <a href="#">Kebijakan Privasi</a>
-            <a href="#">Syarat &amp; Ketentuan</a>
-            <RouterLink to="/about">Sanggahan Medis</RouterLink>
-            <a href="#">Hubungi Spesialis</a>
-          </div>
-          <p class="footer-copy">
-            © 2026 DermAssist.
-            Hanya untuk tujuan informasi klinis. Bukan pengganti saran medis profesional.
-          </p>
-        </footer>
-
       </div>
 
       <!-- Kolom Kanan: Sidebar Info -->
@@ -385,6 +370,20 @@
       </div>
 
     </div>
+            <!-- Footer -->
+        <footer class="dashboard-footer">
+          <p class="footer-brand">DermAssist</p>
+          <div class="footer-links">
+            <a href="#">Kebijakan Privasi</a>
+            <a href="#">Syarat &amp; Ketentuan</a>
+            <RouterLink to="/about">Sanggahan Medis</RouterLink>
+            <a href="#">Hubungi Spesialis</a>
+          </div>
+          <p class="footer-copy">
+            © 2026 DermAssist.
+            Hanya untuk tujuan informasi klinis. Bukan pengganti saran medis profesional.
+          </p>
+        </footer>
 
   </div>
 </template>

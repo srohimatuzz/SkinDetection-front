@@ -726,6 +726,7 @@ const imageOverlay = computed(() => {
 .gradcam-legend {
   display: flex;
   gap: var(--space-md);
+  flex-wrap: wrap;
 }
 
 .legend-item {
@@ -842,8 +843,8 @@ const imageOverlay = computed(() => {
   border: none;
   border-radius: var(--radius-default);
   padding: var(--space-sm) var(--space-md);
-  font-size: 16px bold;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 700;
   color: var(--color-primary);
   cursor: pointer;
   font-family: var(--font-family);
@@ -881,7 +882,8 @@ const imageOverlay = computed(() => {
   color: #664d03;
   border-radius: var(--radius-default);
   padding: var(--space-md);
-  font-size: 16px bold;
+  font-size: 16px;
+  font-weight: 700;
   line-height: 1.6;
 }
 
@@ -891,7 +893,8 @@ const imageOverlay = computed(() => {
   color: #155724;
   border-radius: var(--radius-default);
   padding: var(--space-md);
-  font-size: 16px bold;
+  font-size: 16px;
+  font-weight: 700;
   line-height: 1.6;
 }
 
@@ -998,6 +1001,7 @@ const imageOverlay = computed(() => {
   color: var(--color-primary);
   text-decoration: none;
   font-size: 13px;
+  flex-wrap: wrap;
 }
 
 .footer-copy {
