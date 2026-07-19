@@ -13,7 +13,7 @@
         </p>
       </div>
       <RouterLink to="/scan" class="btn-primary btn-hero">
-        📷 Mulai Deteksi Baru
+      Mulai Deteksi Baru
       </RouterLink>
     </div>
 

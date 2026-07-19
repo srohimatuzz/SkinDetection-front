@@ -32,7 +32,7 @@
 
       <!-- Sidebar (desktop fixed, mobile drawer) -->
       <AppSidebar
-        :class="{ 'sidebar-open': mobileMenuOpen }"
+        :isOpen="mobileMenuOpen"
         @close="mobileMenuOpen = false"
       />
 
