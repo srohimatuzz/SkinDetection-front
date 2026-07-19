@@ -1015,4 +1015,17 @@ const imageOverlay = computed(() => {
   .gradcam-panels { grid-template-columns: 1fr; }
   .heatmap-stats { grid-template-columns: repeat(2, 1fr); }
 }
+
+.result-main,
+.result-sidebar,
+.classification-info,
+.classification-desc,
+.heatmap-stat,
+.prob-item,
+.gradcam-panel,
+.explanation-card,
+.explanation-text {
+  min-width: 0;
+  overflow-wrap: break-word;
+}
 </style>

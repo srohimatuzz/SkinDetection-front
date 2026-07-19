@@ -155,7 +155,7 @@ html, body, #app-wrapper {
     border-bottom: 1px solid var(--color-outline-variant);
     position: sticky;
     top: 0;
-    z-index: 200;
+    z-index: 300;
     height: 56px;
   }
 
@@ -177,8 +177,6 @@ html, body, #app-wrapper {
     justify-content: center;
   }
 
-  .desktop-topbar { display: none; }
-
   .main-content {
     margin-left: 0;
   }
@@ -194,6 +192,7 @@ html, body, #app-wrapper {
     inset: 0;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 150;
+    top: 56px;  
   }
 }
 </style>

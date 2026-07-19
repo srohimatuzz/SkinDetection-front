@@ -229,11 +229,12 @@ const navItems = [
 }
 
 @media (max-width: 768px) {
-  .sidebar-brand { display: none; } /* brand udah ada di mobile-topbar App.vue */
+  .sidebar-brand { display: none; }
   .sidebar {
     top: 56px;
     height: calc(100vh - 56px);
     padding-top: var(--space-md);
+    z-index: 200;
   }
 }
 </style>

@@ -286,8 +286,11 @@ onUnmounted(() => {
 }
 
 @media (max-width: 768px) {
+  .topbar-left { display: none; }   /* judul halaman ini yang dobel sama mobile-topbar, bukan avatar */
   .topbar {
-    display: none;
+    justify-content: flex-end;
+    padding: var(--space-sm) var(--space-md);
+    position: static;                /* jangan sticky lagi, biar nggak numpuk sama mobile-topbar */
   }
 }
 </style>
