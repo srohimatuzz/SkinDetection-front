@@ -1004,4 +1004,11 @@ const imageOverlay = computed(() => {
   font-size: 11px;
   color: var(--color-outline);
 }
+
+@media (max-width: 768px) {
+  .result-layout { grid-template-columns: 1fr; }
+  .classification-top { grid-template-columns: 1fr; }
+  .gradcam-panels { grid-template-columns: 1fr; }
+  .heatmap-stats { grid-template-columns: repeat(2, 1fr); }
+}
 </style>

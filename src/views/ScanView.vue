@@ -958,4 +958,10 @@ async function analyzeImage() {
   font-size: 11px;
   color: var(--color-outline);
 }
+
+@media (max-width: 768px) {
+  .info-layout { grid-template-columns: 1fr; }
+  .checklist-card { grid-template-columns: 1fr; padding: var(--space-md); }
+  .example-card { grid-template-columns: 1fr; }
+}
 </style>

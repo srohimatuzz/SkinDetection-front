@@ -1146,4 +1146,16 @@ function onPelembabImgError(e) {
   line-height: 1.6;
   text-align: center;
 }
+
+@media (max-width: 768px) {
+  .dashboard-hero { flex-direction: column; align-items: flex-start; }
+  .dashboard-columns { grid-template-columns: 1fr; }
+  .summary-cards { grid-template-columns: 1fr; }
+  .education-grid { grid-template-columns: 1fr; }
+  .edu-card-body { flex-direction: column; }
+  .edu-card-img-wrap { width: 100%; }
+  .edu-card-img { width: 100%; height: auto; }
+  .fact-grid { grid-template-columns: 1fr; }
+  .dashboard-sidebar { position: static; }
+}
 </style>

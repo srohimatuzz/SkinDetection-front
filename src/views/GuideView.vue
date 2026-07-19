@@ -605,4 +605,10 @@ const faqs = [
   font-size: 11px;
   color: var(--color-outline);
 }
+
+@media (max-width: 768px) {
+  .prep-grid { grid-template-columns: repeat(2, 1fr); }
+  .photo-example-grid { grid-template-columns: 1fr; }
+  .result-guide-grid { grid-template-columns: 1fr; }
+}
 </style>

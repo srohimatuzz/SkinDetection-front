@@ -227,4 +227,13 @@ const navItems = [
     justify-content: center;
   }
 }
+
+@media (max-width: 768px) {
+  .sidebar-brand { display: none; } /* brand udah ada di mobile-topbar App.vue */
+  .sidebar {
+    top: 56px;
+    height: calc(100vh - 56px);
+    padding-top: var(--space-md);
+  }
+}
 </style>
