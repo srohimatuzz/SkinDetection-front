@@ -12,28 +12,28 @@
 
       <div class="prep-grid">
         <div class="prep-item">
-          <div class="prep-icon prep-icon--yellow">☀️</div>
+          <div class="prep-icon prep-icon--yellow">1</div>
           <div class="prep-label">Cahaya Terang</div>
           <div class="prep-desc">
             Gunakan cahaya alami atau lampu yang cukup.
           </div>
         </div>
         <div class="prep-item">
-          <div class="prep-icon prep-icon--blue">🎯</div>
+          <div class="prep-icon prep-icon--blue">2</div>
           <div class="prep-label">Fokus Tajam</div>
           <div class="prep-desc">
             Area lesi harus jelas dan tidak blur.
           </div>
         </div>
         <div class="prep-item">
-          <div class="prep-icon prep-icon--teal">📐</div>
+          <div class="prep-icon prep-icon--teal">3</div>
           <div class="prep-label">Jarak 10–15 cm</div>
           <div class="prep-desc">
             Ambil foto dari jarak sekitar 10–15 cm dari kulit.
           </div>
         </div>
         <div class="prep-item">
-          <div class="prep-icon prep-icon--red">🚫</div>
+          <div class="prep-icon prep-icon--red">4</div>
           <div class="prep-label">Tanpa Filter</div>
           <div class="prep-desc">
             Jangan gunakan filter atau editan foto.
@@ -126,7 +126,7 @@
 
         <div class="result-guide-item">
           <div class="result-guide-header">
-            <div class="result-guide-icon">📊</div>
+            <!-- <div class="result-guide-icon">📊</div> -->
             <div class="result-guide-title">Confidence Score</div>
           </div>
           <div class="result-guide-desc">
@@ -137,7 +137,7 @@
 
         <div class="result-guide-item">
           <div class="result-guide-header">
-            <div class="result-guide-icon">🔥</div>
+            <!-- <div class="result-guide-icon">🔥</div> -->
             <div class="result-guide-title">Visualisasi Grad-CAM</div>
           </div>
           <div class="result-guide-desc">
@@ -162,7 +162,7 @@
 
         <div class="result-guide-item">
           <div class="result-guide-header">
-            <div class="result-guide-icon">📋</div>
+            <!-- <div class="result-guide-icon">📋</div> -->
             <div class="result-guide-title">Penjelasan Rule-Based</div>
           </div>
           <div class="result-guide-desc">
@@ -262,23 +262,23 @@ const usageSteps = [
 const faqs = [
   {
     question: 'Apakah hasil AI selalu benar?',
-    answer  : 'Tidak. Hasil analisis merupakan prediksi berbasis pola yang dipelajari model AI dan masih memiliki kemungkinan kesalahan. Selalu konfirmasi dengan dokter spesialis kulit.'
+    answer  : 'Tidak selalu. DermAssist mengenali pola dari gambar kulit, sehingga hasilnya masih bisa mengalami kesalahan. Gunakan hasil ini sebagai informasi awal, bukan sebagai diagnosis pasti. Jika Anda memiliki keluhan, sebaiknya konsultasikan dengan dokter kulit.'
   },
   {
     question: 'Mengapa hasil saya berbeda dengan perkiraan saya?',
-    answer  : 'Perbedaan hasil dapat dipengaruhi kualitas gambar, pencahayaan, sudut pengambilan foto, atau karakteristik lesi kulit yang memiliki kemiripan visual dengan kategori lain.'
+    answer  : 'Eczema dan Psoriasis terkadang memiliki tampilan yang mirip. Selain itu, kualitas foto, pencahayaan, sudut pengambilan gambar, dan kondisi kulit juga dapat memengaruhi hasil. Karena itu, hasil DermAssist bisa berbeda dari perkiraan Anda.'
   },
   {
     question: 'Mengapa nilai confidence saya rendah?',
-    answer  : 'Nilai confidence rendah menunjukkan model kurang yakin dengan prediksinya. Hal ini bisa disebabkan gambar yang kurang jelas, buram, atau kualitas foto yang tidak memadai.'
+    answer  : 'Nilai confidence rendah menunjukkan model kurang yakin dengan prediksinya. Hal ini bisa disebabkan gambar yang kurang jelas, buram, atau kualitas foto yang tidak memadaiArtinya, model belum cukup yakin dengan hasil prediksinya. Hal ini bisa terjadi karena foto kurang jelas, pencahayaan kurang baik, atau ciri-ciri kulit terlihat mirip antara Eczema dan Psoriasis. Coba gunakan foto yang lebih jelas dan fokus pada area kulit yang ingin diperiksa.'
   },
   {
     question: 'Apakah DermAssist dapat menggantikan dokter?',
-    answer  : 'Tidak. DermAssist hanya berfungsi sebagai alat bantu deteksi awal. Diagnosis dan keputusan medis tetap harus dilakukan oleh tenaga kesehatan profesional.'
+    answer  : 'Tidak. DermAssist hanya membantu memberikan informasi dan deteksi awal berdasarkan gambar kulit. Untuk diagnosis dan penanganan yang tepat, tetap konsultasikan kondisi kulit Anda dengan dokter kulit.'
   },
   {
     question: 'Apa yang harus saya lakukan setelah melihat hasil?',
-    answer  : 'Gunakan hasil sebagai referensi awal, lalu konsultasikan dengan dokter spesialis kulit (dermatologis) untuk mendapatkan diagnosis dan penanganan yang tepat.'
+    answer  : 'Gunakan hasil sebagai informasi awal. Jika keluhan berlanjut, semakin parah, atau Anda masih ragu dengan hasilnya, sebaiknya konsultasikan dengan dokter kulit untuk mendapatkan pemeriksaan lebih lanjut.'
   },
 ]
 </script>

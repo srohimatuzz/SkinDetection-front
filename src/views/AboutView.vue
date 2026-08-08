@@ -112,7 +112,7 @@
       </h2>
       <div class="goal-grid">
         <div class="goal-card">
-          <div class="goal-icon">🩺</div>
+          <!-- <div class="goal-icon">🩺</div> -->
           <div class="goal-title">Deteksi Awal</div>
           <div class="goal-desc">
             Membantu identifikasi awal kondisi lesi kulit
@@ -120,7 +120,7 @@
           </div>
         </div>
         <div class="goal-card">
-          <div class="goal-icon">🧠</div>
+          <!-- <div class="goal-icon">🧠</div> -->
           <div class="goal-title">Prediksi Berbasis AI</div>
           <div class="goal-desc">
             Memberikan prediksi menggunakan model deep learning
@@ -128,7 +128,7 @@
           </div>
         </div>
         <div class="goal-card">
-          <div class="goal-icon">🔍</div>
+          <!-- <div class="goal-icon">🔍</div> -->
           <div class="goal-title">Visualisasi Grad-CAM</div>
           <div class="goal-desc">
             Menampilkan area yang paling berpengaruh pada
@@ -136,7 +136,7 @@
           </div>
         </div>
         <div class="goal-card">
-          <div class="goal-icon">📖</div>
+          <!-- <div class="goal-icon">📖</div> -->
           <div class="goal-title">Penjelasan Hasil AI</div>
           <div class="goal-desc">
             Memberikan penjelasan tekstual berbasis aturan
@@ -146,7 +146,7 @@
       </div>
     </div>
 
-    <!-- Cara Kerja (High Level) -->
+    <!-- Cara Kerja (High Level)
     <div class="section-card">
       <h2 class="section-title">
         <svg class="section-icon" viewBox="0 0 24 24" fill="none">
@@ -182,7 +182,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <!-- Dataset -->
     <div class="section-card">
@@ -238,15 +238,15 @@
       </p>
       <div class="metrics-grid">
         <div class="metric-card">
-          <div class="metric-value">72.16%</div>
+          <div class="metric-value">75,57%</div>
           <div class="metric-label">Accuracy</div>
         </div>
         <div class="metric-card">
-          <div class="metric-value">0.8537</div>
+          <div class="metric-value">0,8467</div>
           <div class="metric-label">AUC</div>
         </div>
         <div class="metric-card">
-          <div class="metric-value">0.7138</div>
+          <div class="metric-value">0,753</div>
           <div class="metric-label">F1-Score (Macro)</div>
         </div>
         <div class="metric-card">
